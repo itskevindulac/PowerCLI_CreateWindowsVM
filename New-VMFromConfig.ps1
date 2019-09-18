@@ -1,5 +1,5 @@
 param([string]$config)
-if(!$config){Write-Host "Enter Config File (Server Name)"; $config = Read-Host}
+while(!$config){Write-Host "Enter Config File (Server Name)"; $config = Read-Host}
 
 #read configs from xml 
 if(!([xml]$vmconfig = Get-Content ".\Configs\$config.config")){Write-host "Can't find Server config, stopping..."; Break;}
